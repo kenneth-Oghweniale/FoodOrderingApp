@@ -3,23 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".fragmentComponents.CheckoutTop"
-    android:background="@color/design_default_color_secondary"
+    tools:context=".fragmentComponents.CheckOutBottom"
+    android:background="@color/design_default_color_primary_variant"
     >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         tools:viewBindingType="TextView"
-        android:id="@+id/fragmentText"
+        android:id="@+id/writeUp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         />
+        />
 
     <Button
         android:layout_marginTop="30dp"
+        android:id="@+id/btnBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello there"
+        android:text="Zuzualakate"
         />
-
 </FrameLayout>

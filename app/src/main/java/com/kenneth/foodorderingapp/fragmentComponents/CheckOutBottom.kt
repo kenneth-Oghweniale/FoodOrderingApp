@@ -6,27 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kenneth.foodorderingapp.R
-import com.kenneth.foodorderingapp.databinding.FragmentCheckoutTopBinding
-
-//class CheckoutTop : Fragment(R.layout.fragment_checkout_top)
+import com.kenneth.foodorderingapp.databinding.FragmentCheckOutBottomBinding
 
 
-class CheckoutTop : Fragment() {
+class CheckOutBottom : Fragment() {
 
-    private var _binding: FragmentCheckoutTopBinding? = null
+    private var _binding: FragmentCheckOutBottomBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentCheckoutTopBinding.inflate(inflater, container, false)
+        _binding = FragmentCheckOutBottomBinding.inflate(inflater, container, false)
         val view = binding.root
-        // Inflate the layout for this fragment
 
-        binding.fragmentText.text = "Fragment"
+        binding.writeUp.text = "blueberry"
+
         return view
     }
 
@@ -34,7 +31,5 @@ class CheckoutTop : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
 
 }
