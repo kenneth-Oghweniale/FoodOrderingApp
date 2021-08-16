@@ -11,6 +11,7 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var signIn: Button
     private lateinit var signUp: TextView
+    private lateinit var checkOutB: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,12 @@ class SignInActivity : AppCompatActivity() {
             gotoSignUp()
         }
 
+        checkOutB = binding.btnCheckOutB
+
+        checkOutB.setOnClickListener {
+           gotoCheckOutB()
+        }
+
     }
 
     private fun gotoMain() {
@@ -36,6 +43,11 @@ class SignInActivity : AppCompatActivity() {
 
     private fun gotoSignUp() {
         val myIntent = Intent(this, SignUpActivity::class.java)
+        startActivity(myIntent)
+    }
+
+    private fun gotoCheckOutB() {
+        val myIntent = Intent(this, CheckOut::class.java)
         startActivity(myIntent)
     }
 }
