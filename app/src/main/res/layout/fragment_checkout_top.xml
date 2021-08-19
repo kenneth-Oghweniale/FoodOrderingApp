@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".fragmentComponents.CheckoutTop"
-    android:background="@color/design_default_color_secondary"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentComponents.CheckoutTop">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        tools:viewBindingType="TextView"
-        android:id="@+id/fragmentText"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
-
-    <Button
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello there"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/app_name" />
 
-</FrameLayout>
+<!--    <TextView-->
+<!--        tools:viewBindingType="TextView"-->
+<!--        android:id="@+id/fragmentText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--         />-->
+
+<!--    <Button-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="hello there"-->
+<!--        />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

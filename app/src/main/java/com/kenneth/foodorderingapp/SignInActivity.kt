@@ -47,7 +47,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun gotoCheckOutB() {
-        val myIntent = Intent(this, CheckOut::class.java)
+        val myIntent = Intent(this, CartActivity::class.java)
         startActivity(myIntent)
     }
 }

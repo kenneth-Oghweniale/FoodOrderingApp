@@ -8,21 +8,6 @@ import com.kenneth.foodorderingapp.databinding.ActivityCheckOutBinding
 import com.kenneth.foodorderingapp.fragmentComponents.CheckOutBottom
 import com.kenneth.foodorderingapp.fragmentComponents.CheckoutTop
 
-//class CheckOut : AppCompatActivity(R.layout.activity_check_out) {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        if (savedInstanceState == null) {
-//            supportFragmentManager.commit {
-//                setReorderingAllowed(true)
-//                add<CheckoutTop>(R.id.fragment_container_view)
-//            }
-//        }
-//    }
-//}
-
-
-
-
 class CheckOut : AppCompatActivity() {
 
     private lateinit var binding: ActivityCheckOutBinding
@@ -35,6 +20,7 @@ class CheckOut : AppCompatActivity() {
                 setReorderingAllowed(true)
                 add<CheckoutTop>(R.id.fragment_container_view)
                 add<CheckOutBottom>(R.id.fragment_container_view1)
+                // The above imports the fragment class into the fragment view inside our checkout Activity
             }
         }
         binding = ActivityCheckOutBinding.inflate(layoutInflater)

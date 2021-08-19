@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrderingApp">
-        <activity android:name=".CheckOut"></activity>
+        <activity android:name=".OrderSummary"></activity>
+        <activity android:name=".CartActivity" />
+        <activity android:name=".CheckOut" />
         <activity
             android:name=".SignUpActivity"
             android:theme="@style/Theme.FoodOrderingApp.NoActionBar" />
