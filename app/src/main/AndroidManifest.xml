@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrderingApp">
-        <activity android:name=".SignUpActivity"
-            android:theme="@style/Theme.FoodOrderingApp.NoActionBar"/>
-        <activity android:name=".SignInActivity"
-            android:theme="@style/Theme.FoodOrderingApp.NoActionBar"/>
+        <activity android:name=".OrderSummary"></activity>
+        <activity android:name=".CartActivity" />
+        <activity android:name=".CheckOut" />
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/Theme.FoodOrderingApp.NoActionBar" />
+        <activity
+            android:name=".SignInActivity"
+            android:theme="@style/Theme.FoodOrderingApp.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.FoodOrderingApp.NoActionBar">

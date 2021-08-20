@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragmentComponents.CheckOutBottom"
+    android:background="@color/design_default_color_primary_variant"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnBottom2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Zuzualakate" />
+
+        <TextView
+            tools:viewBindingType="TextView"
+            android:id="@+id/writeUp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <Button
+            android:layout_marginTop="1500dp"
+            android:id="@+id/btnBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zuzualakate"
+            />
+
+
+    </FrameLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
