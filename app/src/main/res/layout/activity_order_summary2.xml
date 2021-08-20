@@ -28,7 +28,7 @@
         android:id="@+id/divider4"
         android:layout_width="380dp"
         android:layout_height="1dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="?android:attr/listDivider"
         android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -121,8 +121,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_width="379dp"
+        android:layout_height="159dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
