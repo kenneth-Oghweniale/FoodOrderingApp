@@ -37,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun gotoMain() {
-        val myIntent = Intent(this, MainActivity::class.java)
+        val myIntent = Intent(this, HomePage::class.java)
         startActivity(myIntent)
     }
 

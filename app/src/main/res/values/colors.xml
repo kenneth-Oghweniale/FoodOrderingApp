@@ -7,4 +7,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFE033</color>
+    <color name="strokeColor">#9c9c9c</color>
 </resources>
