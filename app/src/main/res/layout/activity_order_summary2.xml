@@ -9,14 +9,14 @@
     tools:context=".OrderSummary">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppinsemibold"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:text="Confirm"
+        android:text="Checkout"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:cornerRadius="5dp"
