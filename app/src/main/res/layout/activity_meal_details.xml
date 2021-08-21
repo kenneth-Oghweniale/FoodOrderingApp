@@ -68,7 +68,7 @@
         android:fontFamily="@font/poppinsemibold"
         android:text="Subtotal:"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/confirm2"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddToCart"
         app:layout_constraintStart_toStartOf="@+id/textView14" />
 
     <TextView
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView15" />
 
     <Button
-        android:id="@+id/confirm2"
+        android:id="@+id/btnAddToCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
