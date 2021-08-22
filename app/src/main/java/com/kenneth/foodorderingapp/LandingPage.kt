@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
 import android.view.LayoutInflater
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kenneth.foodorderingapp.databinding.ActivityLandingPageBinding
 import com.kenneth.foodorderingapp.foodviews.CartAdapter
 import com.kenneth.foodorderingapp.foodviews.MealAdapter
@@ -33,6 +35,9 @@ class LandingPage : AppCompatActivity() {
         )
 
         myMealAdapter = MealAdapter(meals)
+        val gridLayoutManager = GridLayoutManager(this, 2)
+        binding.recyclerViewMeal.layoutManager = gridLayoutManager
         binding.recyclerViewMeal.adapter = myMealAdapter
+//        binding.recyclerViewMeal.adapter = myMealAdapter
     }
 }

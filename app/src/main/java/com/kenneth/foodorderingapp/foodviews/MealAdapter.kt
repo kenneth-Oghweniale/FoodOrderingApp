@@ -1,5 +1,6 @@
 package com.kenneth.foodorderingapp.foodviews
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,9 +10,10 @@ import com.kenneth.foodorderingapp.models.FoodModel
 class MealAdapter(val meals: List<FoodModel>): RecyclerView.Adapter<MealAdapter.MealViewHolder>(){
 
     inner class MealViewHolder( var binding: FoodItemBinding): RecyclerView.ViewHolder(binding.root){
+        @SuppressLint("SetTextI18n")
         fun bind(foodItem: FoodModel){
             binding.foodName.text = foodItem.mealName
-            binding.foodPrice.text = foodItem.mealPrice
+            binding.foodPrice.text = "₦" + foodItem.mealPrice
         }
     }
 

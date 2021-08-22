@@ -17,35 +17,33 @@
         android:textColor="@color/black"
         app:cornerRadius="8dp"
         app:iconPadding="0dp"
-        app:layout_constraintStart_toStartOf="@+id/cart_price"
-        app:layout_constraintTop_toBottomOf="@+id/cart_price" />
+        app:layout_constraintStart_toStartOf="@+id/cartPrice"
+        app:layout_constraintTop_toBottomOf="@+id/cartPrice" />
 
     <TextView
-        android:id="@+id/cart_price"
+        android:id="@+id/cartPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/poppinsregular"
         android:text="₦3700.00"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/cart_food_title"
-        app:layout_constraintTop_toBottomOf="@+id/cart_food_title" />
+        app:layout_constraintStart_toStartOf="@+id/cartFoodTitle"
+        app:layout_constraintTop_toBottomOf="@+id/cartFoodTitle" />
 
     <TextView
         android:id="@+id/view_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/poppinsregular"
         android:text="View Details"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/qty"
-        tools:layout_editor_absoluteY="78dp" />
+        app:layout_constraintEnd_toEndOf="@+id/button_close"
+        app:layout_constraintTop_toBottomOf="@+id/cartPrice" />
 
     <TextView
-        android:id="@+id/cart_food_title"
+        android:id="@+id/cartFoodTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
@@ -53,8 +51,8 @@
         android:fontFamily="@font/poppinsemibold"
         android:text="Veg. Soup &amp; Fufu"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/cart_image"
-        app:layout_constraintTop_toTopOf="@+id/cart_image" />
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
     <TextView
         android:id="@+id/qty"
@@ -76,7 +74,7 @@
         app:layout_constraintGuide_begin="146dp" />
 
     <ImageView
-        android:id="@+id/cart_image"
+        android:id="@+id/imageView5"
         android:layout_width="91dp"
         android:layout_height="110dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,8 +89,8 @@
         android:layout_marginStart="90dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cart_food_title"
-        app:layout_constraintTop_toTopOf="@+id/cart_food_title"
+        app:layout_constraintStart_toEndOf="@+id/cartFoodTitle"
+        app:layout_constraintTop_toTopOf="@+id/cartFoodTitle"
         app:srcCompat="@drawable/ic_close" />
 
     <View
@@ -101,7 +99,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="20dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/cart_image"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         tools:layout_editor_absoluteX="1dp" />
 
     <Button

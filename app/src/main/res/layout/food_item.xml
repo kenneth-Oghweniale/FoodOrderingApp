@@ -1,60 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card"
-    android:layout_width="120dp"
+    android:id="@+id/foodView"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_marginLeft="8dp"
+    android:paddingLeft="8dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/foodPrice"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="₦1500"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/foodName"
+        app:layout_constraintTop_toBottomOf="@+id/foodName" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            tools:srcCompat="@tools:sample/backgrounds/scenic"
-            android:scaleType="centerCrop"
-            android:contentDescription="meal"
-            />
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="White Rice &amp; Stew"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="16dp">
-
-
-            <TextView
-                android:id="@+id/foodName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppinsregular"
-                android:text="Omena Agofure"
-                android:textSize="14sp"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                />
-
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/meal1_foreground" />
 
 
-            <TextView
-                android:id="@+id/foodPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsregular"
-                android:text="₦6400.00"
-                android:textColor="@color/black"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:layout_marginTop="8dp"
-                />
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
