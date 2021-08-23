@@ -22,7 +22,7 @@ var retrofitData: ApiRequestProvider = ApiRequestProvider
 
 class LandingPage : AppCompatActivity() {
     private lateinit var binding: ActivityLandingPageBinding
-//    private lateinit var myMealAdapter: MealAdapter
+    private lateinit var myMealAdapter: MealAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,8 +47,8 @@ class LandingPage : AppCompatActivity() {
 
 
 //        myMealAdapter = MealAdapter(meals)
-//        val gridLayoutManager = GridLayoutManager(this, 2)
-//        binding.recyclerViewMeal.layoutManager = gridLayoutManager
+        val gridLayoutManager = GridLayoutManager(this, 2)
+        binding.recyclerViewMeal.layoutManager = gridLayoutManager
 //        binding.recyclerViewMeal.adapter = myMealAdapter
 //        binding.recyclerViewMeal.adapter = myMealAdapter
     }
@@ -63,14 +63,17 @@ class LandingPage : AppCompatActivity() {
             ) {
                 val responseBody = response.body()!!
 
-                val bodyAsText = StringBuilder()
+                myMealAdapter = MealAdapter(responseBody)
+                binding.recyclerViewMeal.adapter = myMealAdapter
 
-                for (eachData in responseBody){
-                    bodyAsText.append(eachData.name)
-                    bodyAsText.append("\n")
-                    bodyAsText.append(eachData.price)
-                }
-                binding.popularMeal.text = bodyAsText
+//                val bodyAsText = StringBuilder()
+//
+//                for (eachData in responseBody){
+//                    bodyAsText.append(eachData.name)
+//                    bodyAsText.append("\n")
+//                    bodyAsText.append(eachData.price)
+//                }
+//                binding.popularMeal.text = bodyAsText
             }
 
             override fun onFailure(call: Call<List<FoodModel>?>, t: Throwable) {
