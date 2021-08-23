@@ -7,7 +7,7 @@
     tools:context=".LandingPage">
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/popularMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -23,11 +23,11 @@
         android:id="@+id/recyclerViewMeal"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
-        tools:listitem="@layout/food_item" />
+        app:layout_constraintTop_toBottomOf="@+id/popularMeal"
+        tools:listitem="@layout/food_item"
+        />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
