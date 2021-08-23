@@ -7,7 +7,7 @@
     tools:context=".LandingPage">
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/popularMeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -25,7 +25,7 @@
         android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/popularMeal"
         tools:listitem="@layout/food_item"
         />
 

@@ -12,8 +12,8 @@ class MealAdapter(val meals: List<FoodModel>): RecyclerView.Adapter<MealAdapter.
     inner class MealViewHolder( var binding: FoodItemBinding): RecyclerView.ViewHolder(binding.root){
         @SuppressLint("SetTextI18n")
         fun bind(foodItem: FoodModel){
-            binding.foodName.text = foodItem.mealName
-            binding.foodPrice.text = "₦" + foodItem.mealPrice
+            binding.foodName.text = foodItem.name
+            binding.foodPrice.text = "₦" + foodItem.price
         }
     }
 
