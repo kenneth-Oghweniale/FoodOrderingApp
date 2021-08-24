@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrderingApp">
-        <activity android:name=".LandingPage"></activity>
+        <activity android:name=".LandingPage">
+
+        </activity>
         <activity android:name=".MealDetails" />
         <activity android:name=".OrderSummary" />
         <activity android:name=".CartActivity" />
