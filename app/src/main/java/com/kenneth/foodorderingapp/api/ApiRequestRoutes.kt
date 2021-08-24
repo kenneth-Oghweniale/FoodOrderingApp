@@ -9,5 +9,6 @@ import retrofit2.http.GET
 
 interface ApiRequestRoutes {
     @GET("api/v1/food")
-    fun getFoodItems(): Call<List<FoodModel>>
+     suspend fun getFoodItems(): List<FoodModel>
+
 }
