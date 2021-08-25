@@ -50,7 +50,7 @@ class LandingPage : AppCompatActivity() {
 
 
 
-        myMealAdapter = MealAdapter(listOf())
+        myMealAdapter = MealAdapter(this, listOf())
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.recyclerViewMeal.layoutManager = gridLayoutManager
         viewModelFood = ViewModelProvider(this)[FoodViewModel::class.java]
@@ -61,6 +61,7 @@ class LandingPage : AppCompatActivity() {
         // get Request
         viewModelFood.foodLiveData.observe(this, {foodItem ->
 //            val intent = Intent(this, MealDetails::class.java)
+//            startActivity(intent)
 //            intent.putExtra("FoodName", )
             myMealAdapter.meals = foodItem
             binding.recyclerViewMeal.adapter = myMealAdapter
