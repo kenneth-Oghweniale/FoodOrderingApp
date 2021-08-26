@@ -25,6 +25,7 @@ class MealAdapter(var context: Context, var meals: List<FoodModel>): RecyclerVie
 
                 intent.putExtra("FoodName", foodItem.name)
                 intent.putExtra("Description", foodItem.description)
+                intent.putExtra("FoodPrice", foodItem.price)
 
                 startActivity(context,intent, Bundle.EMPTY)
                 // please read up STARTACTIVITY Method and it's argument. Also I used CTRL + SPACE to get suggestions that just workeed for using the start acitivity method

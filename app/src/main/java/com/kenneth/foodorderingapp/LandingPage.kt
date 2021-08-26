@@ -17,6 +17,7 @@ import com.kenneth.foodorderingapp.foodviews.FoodViewModel
 import com.kenneth.foodorderingapp.foodviews.MealAdapter
 import com.kenneth.foodorderingapp.models.CartModel
 import com.kenneth.foodorderingapp.models.FoodModel
+//import com.kenneth.foodorderingapp.room.CartViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,6 +28,7 @@ class LandingPage : AppCompatActivity() {
     private lateinit var binding: ActivityLandingPageBinding
     private lateinit var myMealAdapter: MealAdapter
     private lateinit var viewModelFood: FoodViewModel
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +49,7 @@ class LandingPage : AppCompatActivity() {
 //                "Egg & Plantain", "1500"
 //            )
 //        )
+
 
 
 

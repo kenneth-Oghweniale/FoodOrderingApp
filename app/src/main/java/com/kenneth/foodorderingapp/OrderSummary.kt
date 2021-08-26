@@ -16,12 +16,12 @@ class OrderSummary : AppCompatActivity() {
         setContentView(view)
 
         binding.btnCheckout.setOnClickListener {
-            gotoMealDetails()
+//            gotoMealDetails()
         }
     }
 
-    private fun gotoMealDetails() {
-        val myIntent = Intent(this, MealDetails::class.java)
-        startActivity(myIntent)
-    }
+//    private fun gotoMealDetails() {
+//        val myIntent = Intent(this, MealDetails::class.java)
+//        startActivity(myIntent)
+//    }
 }

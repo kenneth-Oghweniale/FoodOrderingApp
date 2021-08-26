@@ -20,7 +20,7 @@ class CartAdapter(val cartItems: List<CartModel>  ): RecyclerView.Adapter<CartAd
             var count: Int = 0
 
                 binding.cartFoodTitle.text = cartItem.FoodTitle
-                binding.cartPrice.text = "₦" + cartItem.Price
+                binding.cartPrice.text = cartItem.Price
 
 
                 binding.decrement.setOnClickListener {

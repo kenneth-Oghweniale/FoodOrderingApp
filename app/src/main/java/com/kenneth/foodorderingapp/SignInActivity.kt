@@ -30,14 +30,14 @@ class SignInActivity : AppCompatActivity() {
 
         checkOutB = binding.btnCheckOutB
 
-        checkOutB.setOnClickListener {
-           gotoCheckOutB()
-        }
+//        checkOutB.setOnClickListener {
+//           gotoCheckOutB()
+//        }
 
     }
 
     private fun gotoMain() {
-        val myIntent = Intent(this, HomePage::class.java)
+        val myIntent = Intent(this, LandingPage::class.java)
         startActivity(myIntent)
     }
 
@@ -47,7 +47,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun gotoCheckOutB() {
-        val myIntent = Intent(this, CartActivity::class.java)
+        val myIntent = Intent(this, LandingPage::class.java)
         startActivity(myIntent)
     }
 }
