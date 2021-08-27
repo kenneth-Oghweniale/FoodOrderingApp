@@ -17,5 +17,4 @@ class FoodViewModel: ViewModel() {
             foodLiveData.postValue(ApiRequestProvider.service.getFoodItems())
         }
     }
-
 }

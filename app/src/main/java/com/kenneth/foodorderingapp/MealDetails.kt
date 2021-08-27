@@ -1,5 +1,6 @@
 package com.kenneth.foodorderingapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ class MealDetails : AppCompatActivity() {
     private lateinit var binding: ActivityMealDetailsBinding
     private lateinit var viewModel: CartViewModel
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMealDetailsBinding.inflate(layoutInflater)
@@ -34,25 +36,22 @@ class MealDetails : AppCompatActivity() {
 
         binding.cartFoodTitle2.text = intent.getStringExtra("FoodName")
         binding.foodDescription.text = intent.getStringExtra("Description")
-        binding.foodMealPrice.text = intent.getStringExtra("FoodPrice")
+        binding.foodMealPrice.text = intent.getIntExtra("FoodValue", 0).toString()
 
         binding.btnAddToCart.setOnClickListener {
             gotoCart()
 
             val foodTitle: String = binding.cartFoodTitle2.text.toString()
-            val price: String = binding.foodMealPrice.text.toString()
+            val price: Int = binding.foodMealPrice.text.toString().toInt()
 
 //            val foodTitle = "Efe"
 //            val price = "Evans"
 
-            val cartItem = CartModel(foodTitle, price)
-//            val cartDao = db.cartDao()
+            val cartItem = CartModel(foodTitle, price, 1)
+            val cartDao = db.cartDao()
 
-//            cartDao.addCartItem(cartItem)
+            cartDao.addCartItem(cartItem)
 
-
-
-            viewModel.viewModelAddCartItem(cartItem, db)
         }
     }
 

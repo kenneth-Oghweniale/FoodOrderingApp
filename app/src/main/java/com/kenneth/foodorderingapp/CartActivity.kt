@@ -1,10 +1,12 @@
-package com.kenneth.foodorderingapp
+ package com.kenneth.foodorderingapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.kenneth.foodorderingapp.databinding.ActivityCartBinding
 import com.kenneth.foodorderingapp.foodviews.CartAdapter
@@ -47,14 +49,34 @@ class CartActivity : AppCompatActivity() {
 //            )
 //        )
 
-        myCartAdapter = CartAdapter(mutableListOf())
-
-
         viewModelCart.viewModelGetAllCartItems(db).observe(this, {
-            myCartAdapter = CartAdapter(it)
+            myCartAdapter = CartAdapter(it,
+                {
+                viewModelCart = ViewModelProvider(this)[CartViewModel::class.java]
+                viewModelCart.ViewModelRemoveCartItem(it, db)
+                },
+                {
+                    Toast.makeText(this, "Increase pressed!", Toast.LENGTH_SHORT).show()
+                    val cartItem = it.copy(unit = it.unit + 1)
+                    viewModelCart.ViewModelUpdateCartItem(cartItem, db)
+                },
+                {
+                    Toast.makeText(this, "Decrease pressed!", Toast.LENGTH_SHORT).show()
+                    val cartItem = it.copy(unit = it.unit - 1)
+                    viewModelCart.ViewModelUpdateCartItem(cartItem, db)
+                })
             binding.recyclerView.adapter = myCartAdapter
             myCartAdapter.notifyDataSetChanged()
+
+            var subtotal: Int = 0
+
+            it.forEach {
+                val cost = it.price * it.unit
+                subtotal += cost
+            }
+            binding.textView3.text = "₦${subtotal.toString()}"
         })
+
 
 //        binding.recyclerView.adapter = myCartAdapter
         // ofcourse the above targets the id of the xml recyclerview widget

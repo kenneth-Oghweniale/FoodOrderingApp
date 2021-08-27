@@ -17,4 +17,18 @@ class CartViewModel: ViewModel() {
     ): LiveData<List<CartModel>>{
         return dataBase.cartDao().getAllCartItems()
     }// we make the get cart items query to the db from this viewmodel method which we can tie to any activity of our choice
+
+    fun ViewModelRemoveCartItem(
+        cartItem: CartModel,
+        dataBase: CartDataBase
+    ){
+        dataBase.cartDao().delete(cartItem)
+    }
+
+    fun ViewModelUpdateCartItem(
+        cartItem: CartModel,
+        dataBase: CartDataBase
+    ){
+        dataBase.cartDao().updateCart(cartItem)
+    }
 }

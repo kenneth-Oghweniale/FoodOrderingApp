@@ -12,37 +12,42 @@ import com.kenneth.foodorderingapp.MealDetails
 import com.kenneth.foodorderingapp.databinding.FoodItemBinding
 import com.kenneth.foodorderingapp.models.FoodModel
 
-class MealAdapter(var context: Context, var meals: List<FoodModel>): RecyclerView.Adapter<MealAdapter.MealViewHolder>(){
+class MealAdapter(var context: Context, var meals: List<FoodModel>) :
+    RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
-    inner class MealViewHolder( var binding: FoodItemBinding): RecyclerView.ViewHolder(binding.root){
+    inner class MealViewHolder(var binding: FoodItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
         @SuppressLint("SetTextI18n")
-        fun bind(foodItem: FoodModel){
+        fun bind(foodItem: FoodModel) {
             binding.foodName.text = foodItem.name
             binding.foodPrice.text = "₦" + foodItem.price
             binding.root.setOnClickListener {
-//                clickerFnx(foodItem)
+
                 val intent = Intent(context, MealDetails::class.java)
 
                 intent.putExtra("FoodName", foodItem.name)
                 intent.putExtra("Description", foodItem.description)
-                intent.putExtra("FoodPrice", foodItem.price)
+                intent.putExtra("FoodValue", foodItem.price)
 
-                startActivity(context,intent, Bundle.EMPTY)
-                // please read up STARTACTIVITY Method and it's argument. Also I used CTRL + SPACE to get suggestions that just workeed for using the start acitivity method
+                startActivity(context, intent, Bundle.EMPTY)
+
+                /* Please read up StartActivity method and it's argument.
+                 Also I used CTRL + SPACE to get
+                 suggestions that just worked for using the start activity method
+                */
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
-        val binding : FoodItemBinding = FoodItemBinding.inflate(LayoutInflater.from(parent.context))
+        val binding: FoodItemBinding = FoodItemBinding.inflate(LayoutInflater.from(parent.context))
         return MealViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
         val foodItem = meals[position]
         holder.bind(foodItem)
-
-
     }
 
     override fun getItemCount(): Int {
