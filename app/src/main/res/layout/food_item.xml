@@ -34,11 +34,11 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="103dp"
-        android:layout_height="109dp"
+        android:layout_width="117dp"
+        android:layout_height="117dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/meal1_foreground" />
+        app:srcCompat="@drawable/ic_jollofrice" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

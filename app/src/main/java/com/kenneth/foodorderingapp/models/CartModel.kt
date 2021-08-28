@@ -8,6 +8,7 @@ data class CartModel(
     val foodTitle: String,
     val price: Int,
     var unit: Int,
+    val image: String,
 
     @PrimaryKey(autoGenerate = true)
     val uid: Int = 0

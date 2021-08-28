@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
+import com.bumptech.glide.Glide
 import com.kenneth.foodorderingapp.application.CartRoomDBApplication
 import com.kenneth.foodorderingapp.databinding.ActivityMealDetailsBinding
 import com.kenneth.foodorderingapp.models.CartModel
@@ -47,17 +48,21 @@ class MealDetails : AppCompatActivity() {
 
         binding.subtotalPrice.text = "₦${intent.getIntExtra("FoodValue", 0).toString()}"
 
+        Glide
+            .with(this).load(intent.getStringExtra("FoodImage")).into(binding.detailImage)
+
         binding.btnAddToCart.setOnClickListener {
             gotoCart()
 
             val foodTitle: String = binding.cartFoodTitle2.text.toString()
 //            val price: Int = binding.foodMealPrice.text.toString().toInt()
             val price: Int = intent.getIntExtra("FoodValue", 0)
+            val image: String = intent.getStringExtra("FoodImage").toString()
 
 //            val foodTitle = "Efe"
 //            val price = "Evans"
 
-            val cartItem = CartModel(foodTitle, price, 1)
+            val cartItem = CartModel(foodTitle, price, 1, image)
 //            val cartDao = db.cartDao()
 
 //            cartDao.addCartItem(cartItem)

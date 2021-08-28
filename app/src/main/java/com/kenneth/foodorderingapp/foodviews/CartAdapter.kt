@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.kenneth.foodorderingapp.R
 import com.kenneth.foodorderingapp.databinding.CartItemBinding
 import com.kenneth.foodorderingapp.models.CartModel
@@ -29,6 +30,10 @@ class CartAdapter(
             binding.cartFoodTitle.text = cartItem.foodTitle
             binding.cartPrice.text = "₦ ${cartItem.price.toString() }"
             binding.qty.text = cartItem.unit.toString()
+
+            Glide
+                .with(itemView).load(cartItem.image).into(binding.cartImage)
+
             binding.decrement.setOnClickListener {
                 decrement(cartItem)
             }

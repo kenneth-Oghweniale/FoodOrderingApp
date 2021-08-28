@@ -272,6 +272,15 @@
                     app:layout_constraintTop_toTopOf="@+id/cart_price3"
                     app:srcCompat="@drawable/ic_truck" />
 
+                <ImageView
+                    android:id="@+id/detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="225dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="2dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>

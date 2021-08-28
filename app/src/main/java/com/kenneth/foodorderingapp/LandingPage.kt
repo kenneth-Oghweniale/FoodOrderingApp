@@ -32,21 +32,28 @@ class LandingPage : AppCompatActivity() {
                 "9ikdlr",
                 "Amala",
                 "Amala Meal",
-                "sklksksl",
+                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068224/foodicious/food/qpymryt4tkwlixndwpec.png",
                 1000,
                 "28th August 2021"
             ),FoodModel(
                 "903kdk",
                 "Beans & Plantain",
                 "Beans and Plantain is delicious",
-                "idoniod",
+                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068339/foodicious/food/a0dcilsc9gqpupokycxe.png",
                 2000,
                 "28th August 2021"
             ),FoodModel(
                 "dkjodr",
                 "Rice & Stew",
                 "Rice and Stew is good",
-                "390fd",
+                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068540/foodicious/food/chy97a94q5ms2e0h2goq.png",
+                3000,
+                "28th August 2021"
+            ), FoodModel(
+                "5894kldd",
+                "Bole & Fish",
+                "Bole and fish is yummy",
+                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068781/foodicious/food/lxmphnswjfa7bnx3ro6i.png",
                 3000,
                 "28th August 2021"
             )

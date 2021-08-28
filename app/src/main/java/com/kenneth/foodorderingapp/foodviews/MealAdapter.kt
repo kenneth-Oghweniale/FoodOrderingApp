@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.kenneth.foodorderingapp.MealDetails
 import com.kenneth.foodorderingapp.databinding.FoodItemBinding
 import com.kenneth.foodorderingapp.models.FoodModel
@@ -22,6 +23,11 @@ class MealAdapter(var context: Context, var meals: List<FoodModel>) :
         fun bind(foodItem: FoodModel) {
             binding.foodName.text = foodItem.name
             binding.foodPrice.text = "₦" + foodItem.price
+
+
+            Glide
+                .with(context).load(foodItem.image).into(binding.imageView6)
+
             binding.root.setOnClickListener {
 
                 val intent = Intent(context, MealDetails::class.java)
@@ -29,6 +35,7 @@ class MealAdapter(var context: Context, var meals: List<FoodModel>) :
                 intent.putExtra("FoodName", foodItem.name)
                 intent.putExtra("Description", foodItem.description)
                 intent.putExtra("FoodValue", foodItem.price)
+                intent.putExtra("FoodImage", foodItem.image)
 
                 startActivity(context, intent, Bundle.EMPTY)
 

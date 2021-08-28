@@ -51,8 +51,8 @@
         android:fontFamily="@font/poppinsemibold"
         android:text="Veg. Soup &amp; Fufu"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintStart_toEndOf="@+id/cart_image"
+        app:layout_constraintTop_toTopOf="@+id/cart_image" />
 
     <TextView
         android:id="@+id/qty"
@@ -74,7 +74,7 @@
         app:layout_constraintGuide_begin="146dp" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/cart_image"
         android:layout_width="91dp"
         android:layout_height="110dp"
         android:layout_marginStart="5dp"
@@ -99,7 +99,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="20dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/cart_image"
         tools:layout_editor_absoluteX="1dp" />
 
     <Button
