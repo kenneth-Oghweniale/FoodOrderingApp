@@ -18,6 +18,8 @@ class CartAdapter(
     val decrement: (CartModel) -> Unit
 ):RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
+
+
     inner class CartViewHolder(val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -25,7 +27,7 @@ class CartAdapter(
         fun bind(cartItem: CartModel) {
 
             binding.cartFoodTitle.text = cartItem.foodTitle
-            binding.cartPrice.text = cartItem.price.toString()
+            binding.cartPrice.text = "₦ ${cartItem.price.toString() }"
             binding.qty.text = cartItem.unit.toString()
             binding.decrement.setOnClickListener {
                 decrement(cartItem)
@@ -52,4 +54,5 @@ class CartAdapter(
     override fun getItemCount(): Int {
         return cartItems.size
     }
+
 }

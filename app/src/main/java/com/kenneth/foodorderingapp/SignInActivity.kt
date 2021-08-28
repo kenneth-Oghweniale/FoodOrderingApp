@@ -28,7 +28,7 @@ class SignInActivity : AppCompatActivity() {
             gotoSignUp()
         }
 
-        checkOutB = binding.btnCheckOutB
+//        checkOutB = binding.btnCheckOutB
 
 //        checkOutB.setOnClickListener {
 //           gotoCheckOutB()

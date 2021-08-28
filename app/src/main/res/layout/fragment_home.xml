@@ -71,7 +71,7 @@
                 app:layout_constraintGuide_begin="115dp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/deliveryCost"
                 android:layout_width="115dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="19dp"

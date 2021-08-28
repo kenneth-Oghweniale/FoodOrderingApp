@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/foodView"
-    android:layout_width="wrap_content"
+    android:layout_width="150dp"
     android:layout_height="wrap_content"
     android:layout_marginLeft="8dp"
-    android:paddingLeft="8dp">
+    android:paddingLeft="16dp">
 
 
     <TextView
@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="150dp"
-        android:layout_height="110dp"
+        android:layout_width="103dp"
+        android:layout_height="109dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/meal1_foreground" />

@@ -1,38 +1,59 @@
  package com.kenneth.foodorderingapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import com.kenneth.foodorderingapp.application.CartRoomDBApplication
 import com.kenneth.foodorderingapp.databinding.ActivityCartBinding
 import com.kenneth.foodorderingapp.foodviews.CartAdapter
 import com.kenneth.foodorderingapp.models.CartModel
+import com.kenneth.foodorderingapp.repository.Repository
 import com.kenneth.foodorderingapp.room.CartDataBase
 import com.kenneth.foodorderingapp.room.CartViewModel
+import com.kenneth.foodorderingapp.room.CartViewModelFactory
 
-class CartActivity : AppCompatActivity() {
+ class CartActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCartBinding
     private lateinit var myCartAdapter: CartAdapter
     private lateinit var viewModelCart: CartViewModel
 
+    private val myCartViewModel: CartViewModel by viewModels {
+        CartViewModelFactory((this.application as CartRoomDBApplication).repository)
+    }
+    // END
 
+     private val UpdateACartItemViewModel : CartViewModel by viewModels{
+         CartViewModelFactory((application as CartRoomDBApplication).repository)
+     }
+
+     private val RemoveACartItemViewModel : CartViewModel by viewModels{
+         CartViewModelFactory((application as CartRoomDBApplication).repository)
+     }
+
+
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCartBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
-        viewModelCart = ViewModelProvider(this)[CartViewModel::class.java]
+//        viewModelCart = ViewModelProvider(this)[CartViewModel::class.java]
 
-        val db = Room.databaseBuilder(
-            applicationContext,
-            CartDataBase::class.java, "cart-database"
-        ).allowMainThreadQueries().build()
+//        val db = Room.databaseBuilder(
+//            applicationContext,
+//            CartDataBase::class.java, "cart-database"
+//        ).allowMainThreadQueries().build()
 
 //        val cartItems : List<CartModel> = listOf(
 //            CartModel(
@@ -48,7 +69,7 @@ class CartActivity : AppCompatActivity() {
 //                "Beans & Plantain", "2000"
 //            )
 //        )
-
+        /*
         viewModelCart.viewModelGetAllCartItems(db).observe(this, {
             myCartAdapter = CartAdapter(it,
                 {
@@ -73,13 +94,60 @@ class CartActivity : AppCompatActivity() {
             it.forEach {
                 val cost = it.price * it.unit
                 subtotal += cost
+
             }
+            val delivery: Double = subtotal * 0.02
+            val total: Double = subtotal + delivery
             binding.textView3.text = "₦${subtotal.toString()}"
+            binding.deliveryCost.text = "₦${delivery.toString()}"
+            binding.totalCost.text = "₦${total.toString()}"
         })
+        */
 
 
 //        binding.recyclerView.adapter = myCartAdapter
         // ofcourse the above targets the id of the xml recyclerview widget
+
+
+
+        myCartViewModel.allCartItemsList.observe(this){ eachCartItem ->
+            eachCartItem.let { it ->
+                myCartAdapter = CartAdapter(it,
+                    {
+                        RemoveACartItemViewModel.viewModelRemoveCartItem(it)
+                    },
+                    {
+                        Toast.makeText(this, "Increase pressed!", Toast.LENGTH_SHORT).show()
+                        val cartItem = it.copy(unit = it.unit + 1)
+                        UpdateACartItemViewModel.viewModelUpdateCartItem(cartItem)
+
+                    },
+                    {
+                        Toast.makeText(this, "Decrease pressed!", Toast.LENGTH_SHORT).show()
+                        val cartItem = it.copy(unit = it.unit - 1)
+                        UpdateACartItemViewModel.viewModelUpdateCartItem(cartItem)
+                    })
+                binding.recyclerView.adapter = myCartAdapter
+                myCartAdapter.notifyDataSetChanged()
+
+                var subtotal: Int = 0
+
+                it.forEach {
+                    val cost = it.price * it.unit
+                    subtotal += cost
+
+                }
+                val delivery: Double = subtotal * 0.02
+                val total: Double = subtotal + delivery
+                binding.textView3.text = "₦${subtotal.toString()}"
+                binding.deliveryCost.text = "₦${delivery.toString()}"
+                binding.totalCost.text = "₦${total.toString()}"
+                for (item in it){
+                    Log.i("Dish Title", "${item.foodTitle} :: ${item.price} :: ${item.price}:: ${item.uid}")
+                }
+            }
+        }
+
 
         binding.confirm.setOnClickListener {
             gotoCheckout()

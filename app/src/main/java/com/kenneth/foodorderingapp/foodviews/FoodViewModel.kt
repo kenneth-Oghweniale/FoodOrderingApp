@@ -12,9 +12,9 @@ class FoodViewModel: ViewModel() {
 
     val foodLiveData = MutableLiveData<List<FoodModel>>()
 
-    fun getFoodItems() {
-        CoroutineScope(Dispatchers.IO).launch {
-            foodLiveData.postValue(ApiRequestProvider.service.getFoodItems())
-        }
-    }
+//    fun getFoodItems() {
+//        CoroutineScope(Dispatchers.IO).launch {
+//            foodLiveData.postValue(ApiRequestProvider.service.getFoodItems())
+//        }
+//    }
 }

@@ -33,14 +33,14 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/totalCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppinsregular"
         android:text="₦6400.00"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/deliveryCost"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <View
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/deliveryCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -139,7 +139,7 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:cornerRadius="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/totalCost"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
