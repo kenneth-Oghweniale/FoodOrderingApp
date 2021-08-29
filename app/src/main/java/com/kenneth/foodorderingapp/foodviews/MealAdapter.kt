@@ -11,16 +11,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kenneth.foodorderingapp.MealDetails
 import com.kenneth.foodorderingapp.databinding.FoodItemBinding
+import com.kenneth.foodorderingapp.models.Data
 import com.kenneth.foodorderingapp.models.FoodModel
 
-class MealAdapter(var context: Context, var meals: List<FoodModel>) :
+class MealAdapter(var context: Context, var meals: List<Data>) :
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
     inner class MealViewHolder(var binding: FoodItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
-        fun bind(foodItem: FoodModel) {
+        fun bind(foodItem: Data) {
             binding.foodName.text = foodItem.name
             binding.foodPrice.text = "₦" + foodItem.price
 

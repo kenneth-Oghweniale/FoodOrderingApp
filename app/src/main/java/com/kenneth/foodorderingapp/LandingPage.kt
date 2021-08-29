@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.kenneth.foodorderingapp.databinding.ActivityLandingPageBinding
 import com.kenneth.foodorderingapp.foodviews.FoodViewModel
 import com.kenneth.foodorderingapp.foodviews.MealAdapter
+import com.kenneth.foodorderingapp.models.Data
 import com.kenneth.foodorderingapp.models.FoodModel
 
 //import com.kenneth.foodorderingapp.room.CartViewModel
@@ -27,35 +28,39 @@ class LandingPage : AppCompatActivity() {
         setContentView(view)
 //        getMyFood()
 
-        val meals : List<FoodModel> = listOf(
-            FoodModel(
+        val meals : List<Data> = listOf(
+            Data(
+                3,
                 "9ikdlr",
-                "Amala",
+                "28th August 2021",
                 "Amala Meal",
                 "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068224/foodicious/food/qpymryt4tkwlixndwpec.png",
-                1000,
-                "28th August 2021"
-            ),FoodModel(
-                "903kdk",
-                "Beans & Plantain",
+                "Amala",
+                1000
+            ),Data(
+                4,
+                "403dlr",
+                "28th August 2021",
                 "Beans and Plantain is delicious",
                 "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068339/foodicious/food/a0dcilsc9gqpupokycxe.png",
-                2000,
-                "28th August 2021"
-            ),FoodModel(
+                "Beans & Plantain",
+                2000
+            ),Data(
+                4,
                 "dkjodr",
-                "Rice & Stew",
-                "Rice and Stew is good",
+                "28th August 2021",
+                "Beans and Plantain is delicious",
                 "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068540/foodicious/food/chy97a94q5ms2e0h2goq.png",
-                3000,
-                "28th August 2021"
-            ), FoodModel(
+                "Rice and Stew is good",
+                3000
+            ), Data(
+                4,
                 "5894kldd",
-                "Bole & Fish",
+                "28th August 2021",
                 "Bole and fish is yummy",
                 "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068781/foodicious/food/lxmphnswjfa7bnx3ro6i.png",
-                3000,
-                "28th August 2021"
+                "Bole & Fish",
+                3500
             )
         )
 
