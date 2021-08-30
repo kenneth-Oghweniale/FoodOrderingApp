@@ -7,16 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.kenneth.foodorderingapp.application.CartRoomDBApplication
 import com.kenneth.foodorderingapp.databinding.ActivityCartBinding
-import com.kenneth.foodorderingapp.foodviews.CartAdapter
-import com.kenneth.foodorderingapp.models.CartModel
-import com.kenneth.foodorderingapp.repository.Repository
-import com.kenneth.foodorderingapp.room.CartDataBase
+import com.kenneth.foodorderingapp.viewmodelsAndAdapters.CartAdapter
 import com.kenneth.foodorderingapp.room.CartViewModel
 import com.kenneth.foodorderingapp.room.CartViewModelFactory
 
@@ -111,19 +104,19 @@ import com.kenneth.foodorderingapp.room.CartViewModelFactory
 
 
         myCartViewModel.allCartItemsList.observe(this){ eachCartItem ->
-            eachCartItem.let { it ->
-                myCartAdapter = CartAdapter(it,
+            eachCartItem.let { it ->//CartModel for Cart RoomDataBase
+                myCartAdapter = CartAdapter(it,//CartModel for CartAdapter
                     {
                         RemoveACartItemViewModel.viewModelRemoveCartItem(it)
                     },
                     {
-                        Toast.makeText(this, "Increase pressed!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Item Qty Increased", Toast.LENGTH_SHORT).show()
                         val cartItem = it.copy(unit = it.unit + 1)
                         UpdateACartItemViewModel.viewModelUpdateCartItem(cartItem)
 
                     },
                     {
-                        Toast.makeText(this, "Decrease pressed!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Item Qty Decreased!", Toast.LENGTH_SHORT).show()
                         val cartItem = it.copy(unit = it.unit - 1)
                         UpdateACartItemViewModel.viewModelUpdateCartItem(cartItem)
                     })

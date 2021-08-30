@@ -1,4 +1,4 @@
-package com.kenneth.foodorderingapp.foodviews
+package com.kenneth.foodorderingapp.viewmodelsAndAdapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 import com.kenneth.foodorderingapp.MealDetails
 import com.kenneth.foodorderingapp.databinding.FoodItemBinding
 import com.kenneth.foodorderingapp.models.Data
-import com.kenneth.foodorderingapp.models.FoodModel
 
 class MealAdapter(var context: Context, var meals: List<Data>) :
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {

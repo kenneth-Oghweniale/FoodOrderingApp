@@ -1,16 +1,12 @@
-package com.kenneth.foodorderingapp.foodviews
+package com.kenneth.foodorderingapp.viewmodelsAndAdapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.kenneth.foodorderingapp.R
 import com.kenneth.foodorderingapp.databinding.CartItemBinding
 import com.kenneth.foodorderingapp.models.CartModel
-import com.kenneth.foodorderingapp.room.CartViewModel
 
 class CartAdapter(
     val cartItems: List<CartModel>,
