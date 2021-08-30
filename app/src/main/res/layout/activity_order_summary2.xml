@@ -8,6 +8,25 @@
     android:paddingRight="16dp"
     tools:context=".OrderSummary">
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/customerNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/customerAddressInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Address"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
     <Button
         android:id="@+id/btn_checkout"
         android:layout_width="match_parent"
@@ -20,8 +39,6 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:cornerRadius="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <View
@@ -70,36 +87,12 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppinsemibold"
         android:text="Address"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="15 Franklin Barde Street, Okpanam Asaba."
-        android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/poppinsregular"
-        android:text="Omena Agofure"
-        android:textColor="@color/black"
-        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/customerNameInput" />
 
     <TextView
         android:id="@+id/textView"
@@ -123,10 +116,9 @@
         android:id="@+id/imageButton"
         android:layout_width="379dp"
         android:layout_height="159dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:src="@drawable/ic_map"
+        app:layout_constraintStart_toStartOf="@+id/customerAddressInput"
+        app:layout_constraintTop_toBottomOf="@+id/customerAddressInput" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -139,7 +131,25 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mastercard"
+                android:layout_marginRight="20dp"
+                />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_paypal"
+                />
+
+        </LinearLayout>
+
+
+
+
     </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
