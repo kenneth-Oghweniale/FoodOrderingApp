@@ -138,20 +138,34 @@ import com.kenneth.foodorderingapp.room.CartViewModelFactory
                 for (item in it){
                     Log.i("Dish Title", "${item.foodTitle} :: ${item.price} :: ${item.price}:: ${item.uid}")
                 }
+
+                binding.confirm.setOnClickListener {
+                    val myIntent = Intent(this, OrderSummary::class.java)
+
+                    myIntent.putExtra("cartTotal", total)
+//            intent.putExtra("CartTotal", "35")
+//                    myIntent.putExtra("try", 940)
+                    startActivity(myIntent)
+
+                }
+
             }
-        }
+
+        } // End of viewModel
 
 
-        binding.confirm.setOnClickListener {
-            gotoCheckout()
-        }
+
+
 
 
 //        setContentView(R.layout.activity_cart)
     }
 
-    fun gotoCheckout(){
-        val myIntent = Intent(this, OrderSummary::class.java)
-        startActivity(myIntent)
-    }
+//    fun gotoCheckout(){
+//        val myIntent = Intent(this, OrderSummary::class.java)
+////        intent.putExtra("cartTotal",binding.totalCost )
+//        intent.putExtra("carTotal", "kskdl")
+//
+//        startActivity(myIntent)
+//    }
 }
