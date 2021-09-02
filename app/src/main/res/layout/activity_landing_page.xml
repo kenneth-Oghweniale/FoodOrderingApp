@@ -29,11 +29,11 @@
                 android:id="@+id/recyclerViewMeal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/popularMeal"
-                tools:listitem="@layout/food_item"
-                />
+                tools:listitem="@layout/food_item" />
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView"
@@ -43,11 +43,44 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="@+id/textView18"
                 app:layout_constraintTop_toBottomOf="@+id/textView18">
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:src="@drawable/ic_meal"-->
+<!--                    />-->
 
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    android:src="@drawable/ic_meal2"-->
+<!--                    />-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical" />
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_meal"
+                        android:layout_marginRight="20dp"
+                        />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_meal2"
+                        />
+
+                </LinearLayout>
+
             </HorizontalScrollView>
 
             <TextView
@@ -67,8 +100,9 @@
                 android:id="@+id/chip5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipSpacingHorizontal="20dp"
                 android:layout_marginTop="10dp"
+                android:visibility="invisible"
+                app:chipSpacingHorizontal="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView17"
                 app:layout_constraintTop_toBottomOf="@+id/textView17">
 
@@ -116,6 +150,48 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="30dp" />
 
+            <TextView
+                android:id="@+id/breakFast2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/roundedge"
+                android:fontFamily="@font/poppinsregular"
+                android:padding="5dp"
+                android:text="Breakfast"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@+id/textView17"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/lunch"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/roundedge"
+                android:fontFamily="@font/poppinsregular"
+                android:padding="5dp"
+                android:text="Lunch"
+                android:textAlignment="center"
+                app:layout_constraintStart_toEndOf="@+id/breakFast2"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/dinner"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/roundedge"
+                android:fontFamily="@font/poppinsregular"
+                android:padding="5dp"
+                android:text="Dinner"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lunch"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

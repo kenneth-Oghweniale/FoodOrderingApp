@@ -38,12 +38,57 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/food_description" />
 
+                <TextView
+                    android:id="@+id/smallBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/roundedge"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="5dp"
+                    android:text="Small"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@+id/sizeOption"
+                    app:layout_constraintTop_toBottomOf="@+id/sizeOption" />
+
+                <TextView
+                    android:id="@+id/mediumBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/roundedge"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="5dp"
+                    android:text="Medium"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/largeBtn"
+                    app:layout_constraintStart_toEndOf="@+id/smallBtn"
+                    app:layout_constraintTop_toBottomOf="@+id/sizeOption" />
+
+                <TextView
+                    android:id="@+id/largeBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/roundedge"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="5dp"
+                    android:text="Large (+1)"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@+id/sizeOptionScrollView"
+                    app:layout_constraintStart_toEndOf="@+id/mediumBtn"
+                    app:layout_constraintTop_toBottomOf="@+id/sizeOption" />
+
                 <HorizontalScrollView
                     android:id="@+id/sizeOptionScrollView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
                     android:paddingBottom="10dp"
+                    android:visibility="invisible"
                     app:layout_constraintStart_toStartOf="@+id/sizeOption"
                     app:layout_constraintTop_toBottomOf="@+id/sizeOption">
 
@@ -90,12 +135,13 @@
                 </HorizontalScrollView>
 
                 <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="@+id/vitaminOption"
-                    app:layout_constraintTop_toBottomOf="@+id/vitaminOption"
                     android:paddingLeft="20dp"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/vitaminOption"
+                    app:layout_constraintTop_toBottomOf="@+id/vitaminOption">
 
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chip5"
@@ -103,6 +149,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
+                        android:visibility="invisible"
                         app:layout_constraintStart_toStartOf="@+id/vitaminOption"
                         app:layout_constraintTop_toBottomOf="@+id/vitaminOption">
 
@@ -154,6 +201,48 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sizeOptionScrollView" />
 
+
+                <TextView
+                    android:id="@+id/smallBtn2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/roundedge"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="5dp"
+                    android:text="Chicken"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@+id/sizeOption"
+                    app:layout_constraintTop_toBottomOf="@+id/vitaminOption" />
+
+                <TextView
+                    android:id="@+id/mediumBtn2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/roundedge"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="5dp"
+                    android:text="Beef"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/largeBtn"
+                    app:layout_constraintStart_toEndOf="@+id/smallBtn"
+                    app:layout_constraintTop_toTopOf="@+id/smallBtn2" />
+
+                <TextView
+                    android:id="@+id/largeBtn2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/roundedge"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="5dp"
+                    android:text="Dried"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="@+id/sizeOptionScrollView"
+                    app:layout_constraintStart_toEndOf="@+id/mediumBtn"
+                    app:layout_constraintTop_toTopOf="@+id/mediumBtn2" />
 
                 <TextView
                     android:id="@+id/food_description"

@@ -8,4 +8,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFE033</color>
     <color name="strokeColor">#9c9c9c</color>
+    <color name="efeColor">#000000</color>
+    <color name="border">#696969</color>
 </resources>
