@@ -18,6 +18,9 @@ class MealDetails : AppCompatActivity() {
         binding.btnAddToCart.setOnClickListener {
             gotoLandingPage()
         }
+
+        binding.cartFoodTitle2.text = intent.getStringExtra("FoodName")
+        binding.foodDescription.text = intent.getStringExtra("Description")
     }
 
     fun gotoLandingPage(){
