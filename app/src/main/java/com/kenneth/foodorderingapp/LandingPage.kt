@@ -1,32 +1,21 @@
 package com.kenneth.foodorderingapp
 
-import android.content.ContentValues.TAG
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
-import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.kenneth.foodorderingapp.api.ApiRequestProvider
 import com.kenneth.foodorderingapp.databinding.ActivityLandingPageBinding
-import com.kenneth.foodorderingapp.foodviews.CartAdapter
-import com.kenneth.foodorderingapp.foodviews.FoodViewModel
-import com.kenneth.foodorderingapp.foodviews.MealAdapter
-import com.kenneth.foodorderingapp.models.CartModel
-import com.kenneth.foodorderingapp.models.FoodModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.kenneth.foodorderingapp.viewmodelsAndAdapters.FoodViewModel
+import com.kenneth.foodorderingapp.viewmodelsAndAdapters.MealAdapter
+import com.kenneth.foodorderingapp.models.Data
 
-var retrofitData: ApiRequestProvider = ApiRequestProvider
+//var retrofitData: ApiRequestProvider = ApiRequestProvider
 
 class LandingPage : AppCompatActivity() {
     private lateinit var binding: ActivityLandingPageBinding
     private lateinit var myMealAdapter: MealAdapter
     private lateinit var viewModelFood: FoodViewModel
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,26 +25,52 @@ class LandingPage : AppCompatActivity() {
         setContentView(view)
 //        getMyFood()
 
-//        val meals : List<FoodModel> = listOf(
-//            FoodModel(
-//                "Eba & Soup", "3500"
-//            ),
-//            FoodModel(
-//                "Rice & Chicken", "4500"
-//            ),
-//            FoodModel(
-//                "Egg & Plantain", "1500"
+//        val meals : List<Data> = listOf(
+//            Data(
+//                3,
+//                "9ikdlr",
+//                "28th August 2021",
+//                "Amala Meal",
+//                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068224/foodicious/food/qpymryt4tkwlixndwpec.png",
+//                "Amala",
+//                1000
+//            ),Data(
+//                4,
+//                "403dlr",
+//                "28th August 2021",
+//                "Beans and Plantain is delicious",
+//                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068339/foodicious/food/a0dcilsc9gqpupokycxe.png",
+//                "Beans & Plantain",
+//                2000
+//            ),Data(
+//                4,
+//                "dkjodr",
+//                "28th August 2021",
+//                "Beans and Plantain is delicious",
+//                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068540/foodicious/food/chy97a94q5ms2e0h2goq.png",
+//                "Rice and Stew is good",
+//                3000
+//            ), Data(
+//                4,
+//                "5894kldd",
+//                "28th August 2021",
+//                "Bole and fish is yummy",
+//                "https://res.cloudinary.com/dbr8tr3om/image/upload/v1630068781/foodicious/food/lxmphnswjfa7bnx3ro6i.png",
+//                "Bole & Fish",
+//                3500
 //            )
 //        )
+
 
 
 
         myMealAdapter = MealAdapter(this, listOf())
         val gridLayoutManager = GridLayoutManager(this, 2)
         binding.recyclerViewMeal.layoutManager = gridLayoutManager
+        binding.recyclerViewMeal.adapter = myMealAdapter
         viewModelFood = ViewModelProvider(this)[FoodViewModel::class.java]
 
-//        binding.recyclerViewMeal.adapter = myMealAdapter
+
 
         viewModelFood.getFoodItems()
         // get Request
@@ -63,7 +78,7 @@ class LandingPage : AppCompatActivity() {
 //            val intent = Intent(this, MealDetails::class.java)
 //            startActivity(intent)
 //            intent.putExtra("FoodName", )
-            myMealAdapter.meals = foodItem
+            myMealAdapter.meals = foodItem.data
             binding.recyclerViewMeal.adapter = myMealAdapter
             myMealAdapter.notifyDataSetChanged()
         })

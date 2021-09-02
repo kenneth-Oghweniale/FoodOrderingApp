@@ -15,13 +15,22 @@ class OrderSummary : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.btnCheckout.setOnClickListener {
-            gotoMealDetails()
+//        binding.checkPrice.text = intent.getStringExtra("cartTotal").toString()
+
+        binding.checkPrice.text = intent.getDoubleExtra("cartTotal", 0.0).toString()
+
+//        binding.checkPrice.text = intent.getStringExtra("cartTotal")
+//        binding.checkPrice.text = intent.getIntExtra("try", 0).toString()
+
+
+        binding.btnCheckoutSuccess.setOnClickListener {
+            gotoSucessScreen()
+
         }
     }
 
-    private fun gotoMealDetails() {
-        val myIntent = Intent(this, MealDetails::class.java)
-        startActivity(myIntent)
+    private fun gotoSucessScreen() {
+       val intent = Intent(this@OrderSummary, SuccessScreenActivity::class.java)
+        startActivity(intent)
     }
 }

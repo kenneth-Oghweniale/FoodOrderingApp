@@ -6,26 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
-    <Button
-        android:id="@+id/btnCheckOutB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="16dp"
-        android:text="Go to Check Out"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
     <TextView
         android:id="@+id/tvSignUpText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppin_semibold"
         android:text="Welcome"
         android:layout_marginTop="100dp"
         android:textColor="@color/black"
@@ -101,6 +87,9 @@
         app:layout_constraintTop_toBottomOf="@+id/signInPassword" />
 
     <Button
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:fontFamily="@font/poppinsemibold"
         android:id="@+id/btnSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

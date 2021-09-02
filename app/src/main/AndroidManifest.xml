@@ -3,6 +3,7 @@
     package="com.kenneth.foodorderingapp">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:name=".application.CartRoomDBApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +16,7 @@
         <activity android:name=".MealDetails" />
         <activity android:name=".OrderSummary" />
         <activity android:name=".CartActivity" />
-        <activity android:name=".CheckOut" />
+<!--        <activity android:name=".CheckOut" />-->
         <activity
             android:name=".SignUpActivity"
             android:theme="@style/Theme.FoodOrderingApp.NoActionBar" />
@@ -31,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SuccessScreenActivity"
+            android:theme="@style/Theme.FoodOrderingApp.NoActionBar" />
         <activity android:name=".MainActivity" />
     </application>
 
