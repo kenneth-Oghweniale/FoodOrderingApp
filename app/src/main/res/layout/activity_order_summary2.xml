@@ -8,12 +8,35 @@
     android:paddingRight="16dp"
     tools:context=".OrderSummary">
 
+    <TextView
+        android:id="@+id/customerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsregular"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:text="15 Franklin Barde Street, Okpanam Asaba"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/customerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsregular"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:text="Omena Agofure"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/customerNameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
         android:inputType="textEmailAddress"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -24,6 +47,7 @@
         android:layout_marginTop="10dp"
         android:hint="Address"
         android:inputType="textEmailAddress"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
