@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MealDetails">
 
+
     <FrameLayout
         android:id="@+id/detailFrame"
         android:layout_width="match_parent"

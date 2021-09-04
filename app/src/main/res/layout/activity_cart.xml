@@ -34,13 +34,15 @@
 
     <TextView
         android:id="@+id/totalCost"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppinsregular"
         android:text="₦6400.00"
+        android:textAlignment="textEnd"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/deliveryCost"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <View
