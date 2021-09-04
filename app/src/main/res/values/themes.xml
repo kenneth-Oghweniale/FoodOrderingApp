@@ -17,4 +17,13 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="button11" >
+        <item name="colorPrimary">@color/efeColor</item>
+        <item name="android:fontFamily">@font/poppinsregular</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <style name="Widget.MaterialComponents.Toolbar.Primary.efe">
+        <item name="backgroundColor">@color/white</item>
+        <item name="background">@color/white</item>
+    </style>
 </resources>
